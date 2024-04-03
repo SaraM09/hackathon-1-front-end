@@ -35,9 +35,7 @@ const DonationEventDetails = () => {
           <p>{eventData.contact.phoneNumber}</p>
         </div>
       )}
-
-        
-        
+{/* RSVP functionality (optional) - see separate user story */}    
         </div>
   )
 }
