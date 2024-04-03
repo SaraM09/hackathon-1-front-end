@@ -4,6 +4,7 @@ const CreateEventForm = () => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState(new Date());// Set default date to today
   const [time, setTime] = useState(''); 
+  const [location, setLocation] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
@@ -68,6 +69,18 @@ const CreateEventForm = () => {
       <div className="form-group">
         <label htmlFor="time">Time:</label>
         <input type="time" name="time" id="time" value={time} onChange={handleInputChange} required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="location">Location:</label>
+        <input
+          type="text"
+          name="location"
+          id="location"
+          value={location}
+          onChange={handleInputChange}
+          placeholder="Enter full address or general area"
+        />
+        {/* Optional map integration can be added here */}
       </div>
       </form>
   )
