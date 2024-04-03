@@ -5,6 +5,7 @@ const CreateEventForm = () => {
   const [date, setDate] = useState(new Date());// Set default date to today
   const [time, setTime] = useState(''); 
   const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
@@ -80,8 +81,27 @@ const CreateEventForm = () => {
           onChange={handleInputChange}
           placeholder="Enter full address or general area"
         />
+        </div>
         {/* Optional map integration can be added here */}
+        <div className="form-group">
+        <label htmlFor="description">Description (Optional):</label>
+        <textarea name="description" id="description" value={description} onChange={handleInputChange} />
       </div>
+      <div className="form-group">
+        <label htmlFor="foodDonations">Food Donations (Optional):</label>
+        <div className="checkbox-group">
+          <input type="checkbox" id="cannedGoods" name="foodDonations" value="Canned Goods" onChange={handleInputChange} />
+          <label htmlFor="cannedGoods">Canned Goods</label>
+          <br />
+          <input type="checkbox" id="nonPerishables" name="foodDonations" value="Non-Perishables" onChange={handleInputChange} />
+          <label htmlFor="nonPerishables">Non-Perishables</label>
+          <br />
+          <input type="checkbox" id="freshProduce" name="foodDonations" value="Fresh Produce" onChange={handleInputChange} />
+          <label htmlFor="freshProduce">Fresh Produce</label>
+          <br />
+          <input type="text" name="foodDonations" id="otherDonations" placeholder="Other (list comma separated)" onChange={handleInputChange} />
+        </div>
+        </div>
       </form>
   )
 }
