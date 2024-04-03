@@ -10,12 +10,12 @@ const eventsData = [
       "Join us for a community food drive to support local shelters.",
   },
   {
-    title: "Community Food Drive",
+    title: "Community Pizza Party",
     date: "2023-04-17",
     time: "11:00 AM",
     location: "456 Elm St, Michigan, USA",
     description:
-      "Join us for a community food drive to support local shelters.",
+      "Join us for a community pizza party to support local shelters.",
   },
   // Add more events as needed
 ];
@@ -33,13 +33,16 @@ const DonationEventList = () => {
  }, []);
 
  const handleFilterChange = (event) => {
-    setFilter(event.target.value);
- };
+    setFilter(event.target.value.toLowerCase());
 
- const filteredEvents = events.filter((event) =>
- event.location.toLowerCase().includes(filter.toLowerCase())
+
+ const filtered = events.filter((event) =>
+ event.title.toLowerCase().includes(filter) ||
+ event.location.toLowerCase().includes(filter.toLowerCase()) ||
+ event.description?.toLowerCase().includes(filter) // Optional: Search description if available
 );
-
+setFilteredEvents(filtered); // Update filtered events state for rendering
+};
 
 
   return ( 
@@ -47,7 +50,7 @@ const DonationEventList = () => {
     <h1>Upcoming Food Donation Events</h1>
     <input
         type="text"
-        placeholder="Filter by location"
+        placeholder="Filter by title, location, or description"
         value={filter}
         onChange={handleFilterChange}
       />
