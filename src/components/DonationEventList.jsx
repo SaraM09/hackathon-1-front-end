@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const eventsData = [
   {
+    id: 1,
     title: "Community Food Drive",
     date: "2023-04-15",
     time: "10:00 AM",
@@ -10,6 +11,7 @@ const eventsData = [
       "Join us for a community food drive to support local shelters.",
   },
   {
+    id: 2,
     title: "Community Pizza Party",
     date: "2023-04-17",
     time: "11:00 AM",
