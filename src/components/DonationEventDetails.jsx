@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { allEventsData } from './DonationEventList'; // Import the exported events // To access route parameters
+import { allEventsData } from "./DonationEventList"; // Import the exported events // To access route parameters
 
 const DonationEventDetails = () => {
-    const { eventId } = useParams().eventId; // Get event ID from route parameter
+    const { eventId } = useParams() // Get event ID from route parameter
     const [eventData, setEventData] = useState(null);
 
+   
     useEffect(() => {
-        // const eventId = useParams().eventId;
-        const event = allEventsData.find(event => event.id === eventId); // Find matching event
+        const event = allEventsData.find(event => event.id === parseInt(eventId)); // Find matching event
         setEventData(event); // Update state with found event data
       }, [eventId]);
     
