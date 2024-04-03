@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // To access route parameters
 import { allEventsData } from "./DonationEventList"; // Import the exported events 
 import EditEventForm from "./EditEventForm";
+import RsvpForm from "./RsvpForm";
 
 const DonationEventDetails = () => {
     const { eventId } = useParams() // Get event ID from route parameter
@@ -31,6 +32,11 @@ const DonationEventDetails = () => {
         setEventData(updatedData)
         setIsEditing(false); // Go back to view mode
       };
+
+      const handleRsvp = async (eventId, attending) => {
+        // Placeholder for backend logic to update RSVP status (replace with API call)
+        console.log('RSVP update:', eventId, attending);
+      };
     
 
   return (
@@ -55,8 +61,9 @@ const DonationEventDetails = () => {
       )}
 
         </div>
-      )}
-{/* RSVP functionality (optional) - see separate user story */}    
+      )} 
+      <RsvpForm eventId={eventId} onRsvp={handleRsvp} />
+  
         </div>
   )
 }
