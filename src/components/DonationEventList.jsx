@@ -10,6 +10,11 @@ const eventsData = [
     location: "123 Main St, Anytown, USA",
     description:
       "Join us for a community food drive to support local shelters.",
+      contact: {
+      name: "Pharell Williams",
+      email: "neptunes@virginiaisforlovers.com",
+      phoneNumber: "123-456-7890"
+      }
   },
   {
     id: 2,
@@ -19,6 +24,11 @@ const eventsData = [
     location: "456 Elm St, Michigan, USA",
     description:
       "Join us for a community pizza party to support local shelters.",
+      contact: {
+      name: "Missy Elliot",
+      email: "bdonkbdonk@lifesabeach.com",
+      phoneNumber: "234-567-8901"
+      }
   },
   // Add more events as needed
 ];

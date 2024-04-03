@@ -10,6 +10,7 @@ const DonationEventDetails = () => {
     useEffect(() => {
         const event = allEventsData.find(event => event.id === parseInt(eventId)); // Find matching event
         setEventData(event); // Update state with found event data
+     
       }, [eventId]);
     
       if (!eventData) {
@@ -24,6 +25,16 @@ const DonationEventDetails = () => {
        <p>Time: {eventData.time}</p>
        <p>Location: {eventData.location}</p>
        <p>Description: {eventData.description}</p>
+        {/* Contact information (optional) */}
+        {eventData.contact && (
+        <div>
+          <h3>Contact</h3>
+          <p>{eventData.contact.name}</p>
+          <p>{eventData.contact.email}</p>
+          {/* Phone number, website, etc. can be added here */}
+          <p>{eventData.contact.phoneNumber}</p>
+        </div>
+      )}
 
         
         
