@@ -102,6 +102,10 @@ const CreateEventForm = () => {
           <input type="text" name="foodDonations" id="otherDonations" placeholder="Other (list comma separated)" onChange={handleInputChange} />
         </div>
         </div>
+        <div className="form-group">
+        <label htmlFor="imageFile">Image Upload (Optional):</label>
+        <input type="file" name="imageFile"></input>
+        </div>
       </form>
   )
 }
