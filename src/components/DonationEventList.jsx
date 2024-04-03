@@ -9,6 +9,14 @@ const eventsData = [
     description:
       "Join us for a community food drive to support local shelters.",
   },
+  {
+    title: "Community Food Drive",
+    date: "2023-04-17",
+    time: "11:00 AM",
+    location: "456 Elm St, Michigan, USA",
+    description:
+      "Join us for a community food drive to support local shelters.",
+  },
   // Add more events as needed
 ];
 
