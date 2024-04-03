@@ -41,6 +41,17 @@ const DonationEventList = () => {
         value={filter}
         onChange={handleFilterChange}
       />
+      <ul>
+        {filteredEvents.map((event, index) => (
+          <li key={index}>
+            <h2>{event.title}</h2>
+            <p>Date: {event.date}</p>
+            <p>Time: {event.time}</p>
+            <p>Location: {event.location}</p>
+            {event.description && <p>Description: {event.description}</p>}
+          </li>
+        ))}
+      </ul>
     </div>
 
 
