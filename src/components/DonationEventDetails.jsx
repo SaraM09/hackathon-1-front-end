@@ -21,6 +21,10 @@ const DonationEventDetails = () => {
     <div>
        <h2>{eventData.title}</h2>
        <p>Date: {eventData.date}</p>
+       <p>Time: {eventData.time}</p>
+       <p>Location: {eventData.location}</p>
+       <p>Description: {eventData.description}</p>
+
         
         
         </div>
