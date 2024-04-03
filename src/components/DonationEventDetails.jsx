@@ -16,6 +16,11 @@ const DonationEventDetails = () => {
       if (!eventData) {
         return <p>Loading event details...</p>;
       }
+
+      const handleEditEvent = () => {
+        // Placeholder for future functionality
+        alert('Edit functionality not implemented yet. Coming soon!');
+      };
     
 
   return (
@@ -33,6 +38,8 @@ const DonationEventDetails = () => {
           <p>{eventData.contact.email}</p>
           {/* Phone number, website, etc. can be added here */}
           <p>{eventData.contact.phoneNumber}</p>
+           {/* Edit Event Button */}
+      <button onClick={handleEditEvent}>Edit Event</button>
         </div>
       )}
 {/* RSVP functionality (optional) - see separate user story */}    
