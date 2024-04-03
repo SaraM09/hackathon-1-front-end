@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { allEventsData } from "./DonationEventList"; // Import the exported events // To access route parameters
+import { useParams } from "react-router-dom"; // To access route parameters
+import { allEventsData } from "./DonationEventList"; // Import the exported events 
+import EditEventForm from "./EditEventForm";
 
 const DonationEventDetails = () => {
     const { eventId } = useParams() // Get event ID from route parameter
     const [eventData, setEventData] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
 
    
     useEffect(() => {
@@ -18,8 +20,14 @@ const DonationEventDetails = () => {
       }
 
       const handleEditEvent = () => {
-        // Placeholder for future functionality
-        alert('Edit functionality not implemented yet. Coming soon!');
+    
+        setIsEditing(!isEditing); // Toggle edit mode
+      };
+
+      const handleFormSubmit = (updatedData) => {
+        // Placeholder for backend update logic (replace with API call)
+        console.log('Updated event data:', updatedData);
+        setIsEditing(false); // Go back to view mode
       };
     
 
