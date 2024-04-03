@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useHistory } from "react-router-dom";
 
 const CreateEventForm = () => {
   const [title, setTitle] = useState("");
@@ -8,6 +9,8 @@ const CreateEventForm = () => {
   const [description, setDescription] = useState("");
   const [foodDonations, setFoodDonations] = useState([]);
   const [imageFile, setImageFile] = useState(null);
+  const [confirmationMessage, setConfirmationMessage] = useState(""); // State for confirmation message
+  // const history = useHistory(); // Hook for navigation
 
   const handleInputChange = (event) => {
     const { value, files, name } = event.target;
@@ -61,7 +64,16 @@ const CreateEventForm = () => {
       foodDonations,
       imageFile,
     });
-    // Reset form after successful submission (optional)
+    setConfirmationMessage("Event created successfully!");
+    
+     // Reset form fields to their initial state
+     setTitle("");
+     setDate(new Date());
+     setTime("");
+     setLocation("");
+     setDescription("");
+     setFoodDonations([]);
+     setImageFile(null);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -166,6 +178,10 @@ const CreateEventForm = () => {
       <div className="form-group">
         <button type="submit">Create Event</button>
       </div>
+
+       {/* Display confirmation message if set */}
+       {confirmationMessage && <p>{confirmationMessage}</p>}
+  
     </form>
   );
 };
