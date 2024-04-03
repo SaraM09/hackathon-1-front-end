@@ -20,6 +20,7 @@ const DonationEventDetails = () => {
   return (
     <div>
        <h2>{eventData.title}</h2>
+       <p>Date: {eventData.date}</p>
         
         
         </div>
