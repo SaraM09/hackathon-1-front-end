@@ -18,7 +18,11 @@ const DonationEventDetails = () => {
     
 
   return (
-    <div>DonationEventDetails</div>
+    <div>
+       <h2>{eventData.title}</h2>
+        
+        
+        </div>
   )
 }
 
