@@ -23,6 +23,8 @@ const eventsData = [
 const DonationEventList = () => {
   const [events, setEvents] = useState(eventsData);
   const [filter, setFilter] = useState("");
+  const [filteredEvents, setFilteredEvents] = useState(events); // Maintain a filtered state for dynamic updates
+
 
   useEffect(() => {
     // Simulate fetching events from an API
