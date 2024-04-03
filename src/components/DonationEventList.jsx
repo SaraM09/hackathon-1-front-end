@@ -74,3 +74,5 @@ setFilteredEvents(filtered); // Update filtered events state for rendering
 };
 
 export default DonationEventList;
+
+export const allEventsData = eventsData;
