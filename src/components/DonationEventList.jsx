@@ -33,7 +33,15 @@ const DonationEventList = () => {
 
 
   return ( 
-  <div>Upcoming Food Donation Events</div>
+  <div>
+    <h1>Upcoming Food Donation Events</h1>
+    <input
+        type="text"
+        placeholder="Filter by location"
+        value={filter}
+        onChange={handleFilterChange}
+      />
+    </div>
 
 
   )
