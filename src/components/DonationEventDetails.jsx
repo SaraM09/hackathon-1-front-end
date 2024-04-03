@@ -47,7 +47,11 @@ const DonationEventDetails = () => {
           {/* Phone number, website, etc. can be added here */}
           <p>{eventData.contact.phoneNumber}</p>
            {/* Edit Event Button */}
-      <button onClick={handleEditEvent}>Edit Event</button>
+      <button onClick={handleEditEvent} disabled={isEditing}>{isEditing ? 'Cancel Edit' : 'Edit Event'}</button>
+      {isEditing && (
+        <EditEventForm eventData={eventData} onSubmit={handleFormSubmit} />
+      )}
+
         </div>
       )}
 {/* RSVP functionality (optional) - see separate user story */}    
