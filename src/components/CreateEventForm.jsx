@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const CreateEventForm = () => {
   const [title, setTitle] = useState('');
+  const [date, setDate] = useState(new Date()); // Set default date to today
 
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
@@ -58,6 +59,10 @@ const CreateEventForm = () => {
           onChange={handleInputChange}
           required
         />
+      </div>
+      <div className="form-group">
+        <label htmlFor="date">Date:</label>
+        <input type="date" name="date" id="date" value={date.toISOString().split('T')[0]} onChange={handleInputChange} required />
       </div>
       </form>
   )
