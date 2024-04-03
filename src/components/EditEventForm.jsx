@@ -53,7 +53,7 @@ const EditEventForm = ({ eventData, onSubmit }) => {
     });
   
 
-    onSubmit({ title, date, time, location, description });
+    onSubmit({ title, date: date.toISOString().split('T')[0], time, location, description });
 
   };
   return (

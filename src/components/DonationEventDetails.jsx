@@ -5,8 +5,8 @@ import EditEventForm from "./EditEventForm";
 
 const DonationEventDetails = () => {
     const { eventId } = useParams() // Get event ID from route parameter
-    const [eventData, setEventData] = useState(null);
-    const [isEditing, setIsEditing] = useState(false);
+    const [ eventData, setEventData ] = useState(null);
+    const [ isEditing, setIsEditing ] = useState(false);
 
    
     useEffect(() => {
@@ -26,7 +26,9 @@ const DonationEventDetails = () => {
 
       const handleFormSubmit = (updatedData) => {
         // Placeholder for backend update logic (replace with API call)
+        console.log(eventData, updatedData)
         console.log('Updated event data:', updatedData);
+        setEventData(updatedData)
         setIsEditing(false); // Go back to view mode
       };
     
