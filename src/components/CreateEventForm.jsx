@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 // import { useHistory } from "react-router-dom";
 
 const CreateEventForm = () => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState(new Date()); // Set default date to today
   const [time, setTime] = useState("");
+  const locationRef = useRef(); // Ref for location input
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [foodDonations, setFoodDonations] = useState([]);
@@ -65,7 +66,7 @@ const CreateEventForm = () => {
       imageFile,
     });
     setConfirmationMessage("Event created successfully!");
-    
+
      // Reset form fields to their initial state
      setTitle("");
      setDate(new Date());
@@ -117,12 +118,19 @@ const CreateEventForm = () => {
           type="text"
           name="location"
           id="location"
+          ref={locationRef}
           value={location}
           onChange={handleInputChange}
           placeholder="Enter full address or general area"
         />
       </div>
-      {/* Optional map integration can be added here */}
+      {/* Button to open Google Maps in a new tab */}
+<button
+        onClick={() => window.open("https://www.google.com/maps/place/" + locationRef.current.value, "_blank")}
+        className="btn btn-primary col-lg-5 mx-1 mb-1"
+      >
+        View Map
+      </button>
       <div className="form-group">
         <label htmlFor="description">Description (Optional):</label>
         <textarea
