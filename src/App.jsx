@@ -14,6 +14,7 @@ import { AuthProvider } from './Contexts/AuthContext/AuthContext';
 function App() {
 
   return (
+    <AuthProvider>
     <Router>
       <div>
         <nav>
@@ -24,11 +25,13 @@ function App() {
           <Route path="/create-event-form" element={<CreateEventForm />} />
           <Route path="/donation-event-list" element={<DonationEventList />} />
           <Route path="/events/:eventId" element={<DonationEventDetails  />}/>
+          <Route path="/signin" element={<SignIn />}/>
+          <Route path="/signup" element={<SignUpForm />}/>
         </Routes>
       </div>
       <Footer />
     </Router>
-    
+    </AuthProvider>
   );
 }
 
