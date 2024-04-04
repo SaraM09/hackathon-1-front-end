@@ -5,8 +5,14 @@ import CreateEventForm from "./components/CreateEventForm.jsx";
 import DonationEventList from "./components/DonationEventList.jsx";
 import DonationEventDetails from "./components/DonationEventDetails.jsx";
 import "./App.css";
+import SignUpForm from '../src/components/Feature2/Organisms/SignUp.jsx';
+import SignIn from './components/Feature2/Organisms/SignIn.jsx';
+import { AuthProvider } from './Contexts/AuthContext/AuthContext';
+
+
 
 function App() {
+
   return (
     <Router>
       <div>
