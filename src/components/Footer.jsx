@@ -21,6 +21,9 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+    <div className="logo-container">
+      <img src="/image.png"/>
+    </div>
       <div className="container">
         <p>© {new Date().getFullYear()} Foodbriiite. All rights reserved.</p>
         <p>Contact us at: contact@foodbriiite.com</p>

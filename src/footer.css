@@ -29,4 +29,15 @@
        transform: translateX(-50%) translateY(-30px);
     }
    }
+
+   .logo-container {
+    width: 100px; /* Adjust the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto;
+  }
+
+  .logo-container img {
+    width: 100%; /* Set the width of the image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+  }
    
