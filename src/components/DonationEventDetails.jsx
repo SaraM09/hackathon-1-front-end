@@ -9,6 +9,7 @@ const DonationEventDetails = () => {
   const { eventId } = useParams(); // Get event ID from route parameter
   const [eventData, setEventData] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [isAttending, setIsAttending] = useState(false);
 
   useEffect(() => {
     const event = allEventsData.find((event) => event.id === parseInt(eventId)); // Find matching event
@@ -36,7 +37,30 @@ const DonationEventDetails = () => {
   //   const currentUser = auth.currentUser; // Get the logged-in user object
 
   const handleRsvp = async (eventId, attending) => {
-    // Placeholder for backend logic to update RSVP status (replace with API call)
+    setIsAttending(attending);
+
+    // Simulate attendee count update (assuming you have attendeeCount in eventData)
+    const updatedEventData = { ...eventData };
+    if (attending) {
+      updatedEventData.attendeeCount++;
+    } else {
+      updatedEventData.attendeeCount--;
+    }
+    setEventData(updatedEventData);
+  
+
+//      // Simulate attendee count update (replace with actual logic)
+//   if (attending) {
+//     setEventData({ ...eventData, attendeeCount: eventData.attendeeCount + 1 });
+//   } else {
+//     setEventData({ ...eventData, attendeeCount: eventData.attendeeCount - 1 });
+//   }
+
+  // Logic to update user's RSVP data in Firebase (replace with your implementation)
+//   console.log('User', currentUser.uid, 'is now', attending ? 'attending' : 'not attending', 'event', eventId);
+
+   
+    //Placeholder for backend logic to update RSVP status (replace with API call)
     console.log("RSVP update:", eventId, attending);
 
     // Logic to update user's RSVP data in Firebase (replace with your implementation)
