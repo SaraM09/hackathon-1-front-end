@@ -8,6 +8,7 @@ import "./App.css";
 import SignUpForm from '../src/components/Feature2/Organisms/SignUp.jsx';
 import SignIn from './components/Feature2/Organisms/SignIn.jsx';
 import { AuthProvider } from './Contexts/AuthContext/AuthContext';
+import SearchBar from './components/SearchBar.jsx';
 
 
 
@@ -18,6 +19,7 @@ function App() {
     <Router>
       <div>
         <nav>
+        <SearchBar />
         <Link to="/create-event-form">Create Event </Link>
         <Link to="/donation-event-list">Event List </Link>
         </nav>
