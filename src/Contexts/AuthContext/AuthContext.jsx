@@ -1,6 +1,7 @@
 // AuthProvider.js
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { auth } from "../../components/firebase/firebaseConfig";
+import { createUser } from "../../requestHelper";
 
 import {
   createUserWithEmailAndPassword,
@@ -33,7 +34,19 @@ const AuthProvider = ({ children }) => {
   };
 
   const signup = async (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    const user = await createUserWithEmailAndPassword(auth, email, password);
+    const userDetails = {
+      email,
+      password,
+      username: email,
+      fullName: "User Name1",
+      phoneNumber: "123-456-7789",
+      location: "21 Jumpstreet",
+      firebaseId: user._id
+    };
+    const response = await createUser(userDetails)
+    console.log(response)
+    return response
   };
 
   const loginWithGoogle = async () => {
