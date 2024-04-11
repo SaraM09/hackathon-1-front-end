@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
 import Card from "react-bootstrap/Card";
 import { CardGroup } from "react-bootstrap";
-import CardExploration from "./CardExploration";
+// import CardExploration from "./CardExploration";
 
 
 const eventsData = [
