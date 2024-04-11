@@ -19,6 +19,7 @@ const Header = () => {
   };
 
   return (
+    // navbar
     <div className="sticky-top">
       <Navbar expand="lg" style={{ backgroundColor: "#FFD230" }}>
         <Container fluid>
