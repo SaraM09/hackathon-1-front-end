@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div className="sticky-top">
-      <Navbar expand="lg" className="bg-warning">
+      <Navbar expand="lg" style={{ backgroundColor: "#FFD230" }}>
         <Container fluid>
           <Navbar.Brand as="a" href="/">
             <img
