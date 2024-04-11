@@ -10,7 +10,8 @@ import SignIn from './components/Feature2/Organisms/SignIn.jsx';
 import { AuthProvider } from './Contexts/AuthContext/AuthContext';
 // import CardExploration from "./components/CardExploration.jsx";
 import SearchBar from './components/SearchBar.jsx';
-import header from "./components/header.jsx";
+import Header from "./components/Header.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -19,12 +20,16 @@ function App() {
   return (
     <AuthProvider>
     <Router>
-      <div>
-        <header />
+      <div className="header-container">
+        <Header>
+        <SearchBar /> 
+        </Header>
+      </div>
         <nav>
-        <SearchBar />
-        <Link to="/create-event-form">Create Event </Link>
-        <Link to="/donation-event-list">Event List </Link>
+        {/* <SearchBar /> */}
+        <Link to='/' />
+        <Link to="/create-event-form"></Link>
+        <Link to="/donation-event-list"></Link>
         </nav>
       
         <Routes>
@@ -34,7 +39,6 @@ function App() {
           <Route path="/signin" element={<SignIn />}/>
           <Route path="/signup" element={<SignUpForm />}/>
         </Routes>
-      </div>
       <Footer />
     </Router>
     
