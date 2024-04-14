@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -16,6 +17,10 @@ const Header = () => {
 
   const handleEventList = () => {
     navigate("/donation-event-list");
+  };
+
+  const handleProfile = () => {
+    navigate("/profile");
   };
 
   return (
@@ -40,6 +45,7 @@ const Header = () => {
             >
                 <Nav.Link onClick={handleCreateEventClick}>Create Event</Nav.Link>
                 <Nav.Link onClick={handleEventList}>Event List</Nav.Link>
+                <Nav.Link onClick={handleProfile}>Profile</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -52,7 +58,14 @@ const Header = () => {
                 Search
               </Button>
 
-              <Button variant="outline-success">Login</Button>
+              <Link to= "/signup">
+                <Button variant="outline-success">SignUp</Button>
+              </Link>
+              
+              <Link to= "/signin">
+                <Button variant="outline-success">Login</Button>
+              </Link>
+              
             </Form>
           </Navbar.Collapse>
         </Container>

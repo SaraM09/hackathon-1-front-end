@@ -9,6 +9,8 @@ const createUser = async (userDetail) => {
   return response.data;
 };
 
+
+
 export { createUser };
 
 // username, email, password, fullName, phoneNumber, location, firebaseId

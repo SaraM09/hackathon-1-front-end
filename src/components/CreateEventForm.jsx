@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Form, Row, Col, Button, Card } from "react-bootstrap";
 // import { useHistory } from "react-router-dom";
 
 const CreateEventForm = () => {
@@ -77,100 +78,108 @@ const CreateEventForm = () => {
      setImageFile(null);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <Card className="border-5" style={{ borderColor: '#DCE1DE' }}>
+    <Card.Body>
+    <Form onSubmit={handleSubmit}>
       <h2>Create Food Donation Event</h2>
-      <div className="form-group">
-        <label htmlFor="title">Event Title:</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          value={title}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="date">Date:</label>
-        <input
-          type="date"
-          name="date"
-          id="date"
-          value={date.toISOString().split("T")[0]}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="time">Time:</label>
-        <input
-          type="time"
-          name="time"
-          id="time"
-          value={time}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="location">Location:</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          ref={locationRef}
-          value={location}
-          onChange={handleInputChange}
-          placeholder="Enter full address or general area"
-        />
-      </div>
-      {/* Button to open Google Maps in a new tab */}
-<button
-        onClick={() => window.open("https://www.google.com/maps/place/" + locationRef.current.value, "_blank")}
-        className="btn btn-primary col-lg-5 mx-1 mb-1"
-      >
-        View Map
-      </button>
-      <div className="form-group">
-        <label htmlFor="description">Description (Optional):</label>
-        <textarea
+      <Row>
+        <Col md={6}>
+          <Form.Group controlId="title">
+            <Form.Label>Event Title:</Form.Label>
+            <Form.Control
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleInputChange}
+              required
+            />
+          </Form.Group>
+        </Col>
+        <Col md={6}>
+          <Form.Group controlId="date">
+            <Form.Label>Date:</Form.Label>
+            <Form.Control
+              type="date"
+              name="date"
+              value={date.toISOString().split("T")[0]}
+              onChange={handleInputChange}
+              required
+            />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6}>
+          <Form.Group controlId="time">
+            <Form.Label>Time:</Form.Label>
+            <Form.Control
+              type="time"
+              name="time"
+              value={time}
+              onChange={handleInputChange}
+              required
+            />
+          </Form.Group>
+        </Col>
+        <Col md={6}>
+          <Form.Group controlId="location">
+            <Form.Label>Location:</Form.Label>
+            <Form.Control
+              type="text"
+              name="location"
+              ref={locationRef}
+              value={location}
+              onChange={handleInputChange}
+              placeholder="Enter full address or general area"
+            />
+          </Form.Group>
+          <Button style={{ backgroundColor: '#49A078', borderColor: '#DCE1DE'}}
+            onClick={() =>
+              window.open("https://www.google.com/maps/place/" + locationRef.current.value, "_blank")
+            }
+            className="btn btn-primary col-lg-5 mx-1 mb-1"
+          >
+            View Map
+          </Button>
+        </Col>
+      </Row>
+      <Form.Group controlId="description">
+        <Form.Label>Description (Optional):</Form.Label>
+        <Form.Control
+          as="textarea"
           name="description"
-          id="description"
           value={description}
           onChange={handleInputChange}
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="foodDonations">Food Donations (Optional):</label>
+      </Form.Group>
+      <Form.Group controlId="foodDonations">
+        <Form.Label>Food Donations (Optional):</Form.Label>
         <div className="checkbox-group">
-          <input
+          <Form.Check
             type="checkbox"
             id="cannedGoods"
             name="foodDonations"
             value="Canned Goods"
             onChange={handleInputChange}
+            label="Canned Goods"
           />
-          <label htmlFor="cannedGoods">Canned Goods</label>
-          <br />
-          <input
+          <Form.Check
             type="checkbox"
             id="nonPerishables"
             name="foodDonations"
             value="Non-Perishables"
             onChange={handleInputChange}
+            label="Non-Perishables"
           />
-          <label htmlFor="nonPerishables">Non-Perishables</label>
-          <br />
-          <input
+          <Form.Check
             type="checkbox"
             id="freshProduce"
             name="foodDonations"
             value="Fresh Produce"
             onChange={handleInputChange}
+            label="Fresh Produce"
           />
-          <label htmlFor="freshProduce">Fresh Produce</label>
-          <br />
-          <input
+          <Form.Control
             type="text"
             name="foodDonations"
             id="otherDonations"
@@ -178,19 +187,16 @@ const CreateEventForm = () => {
             onChange={handleInputChange}
           />
         </div>
-      </div>
-      <div className="form-group">
-        <label htmlFor="imageFile">Image Upload (Optional):</label>
-        <input type="file" name="imageFile"></input>
-      </div>
-      <div className="form-group">
-        <button type="submit">Create Event</button>
-      </div>
-
-       {/* Display confirmation message if set */}
-       {confirmationMessage && <p>{confirmationMessage}</p>}
-  
-    </form>
+      </Form.Group>
+      <Form.Group controlId="imageFile">
+        <Form.Label>Image Upload (Optional):</Form.Label>
+        <Form.Control type="file" name="imageFile" />
+      </Form.Group>
+      <Button type="submit" style={{ backgroundColor: '#49A078', borderColor: '#DCE1DE'}}>Create Event</Button>
+      {confirmationMessage && <p>{confirmationMessage}</p>}
+    </Form>
+    </Card.Body>
+    </Card>
   );
 };
 
