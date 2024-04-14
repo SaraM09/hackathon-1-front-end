@@ -78,7 +78,8 @@ const CreateEventForm = () => {
      setImageFile(null);
   };
   return (
-    <Card className="border-5" style={{ borderColor: '#DCE1DE' }}>
+    <div>
+    <Card className="border-5" style={{ borderColor: '#DCE1DE', background: '#DCE1DE' }}>
     <Card.Body>
     <Form onSubmit={handleSubmit}>
       <h2>Create Food Donation Event</h2>
@@ -197,6 +198,7 @@ const CreateEventForm = () => {
     </Form>
     </Card.Body>
     </Card>
+    </div>
   );
 };
 

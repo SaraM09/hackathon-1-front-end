@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../Contexts/AuthContext/AuthContext.jsx";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Card } from "react-bootstrap";
 
 const isPasswordValid = (password) => {
   // regex patterns for password requirements
@@ -48,16 +48,18 @@ const signUpForm = ({ onSubmit }) => {
   };
 
   return (
+    <Card className="border-5" style={{ borderColor: '#DCE1DE', background: '#DCE1DE' }}>
+        <Card.Body>
     <Form onSubmit={handleSignUp}>
       <h2>Sign Up</h2>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={2}>
-          Email
+        <Form.Label column sm={3}>
+          Email:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="email"
-            placeholder="Email"
+            placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -65,13 +67,13 @@ const signUpForm = ({ onSubmit }) => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={2}>
-          Password
+        <Form.Label column sm={4}>
+          Password:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Enter desired password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -79,13 +81,13 @@ const signUpForm = ({ onSubmit }) => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalUsername">
-        <Form.Label column sm={2}>
-          Username
+        <Form.Label column sm={4}>
+          Username:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="text"
-            placeholder="Username"
+            placeholder="Enter username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -93,13 +95,13 @@ const signUpForm = ({ onSubmit }) => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalFullName">
-        <Form.Label column sm={2}>
-          Full Name
+        <Form.Label column sm={4}>
+          Full Name:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="text"
-            placeholder="Full Name"
+            placeholder="Enter your full name"
             value={full_name}
             onChange={(e) => setFull_name(e.target.value)}
           />
@@ -107,13 +109,13 @@ const signUpForm = ({ onSubmit }) => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPhoneNumber">
-        <Form.Label column sm={2}>
-          Phone Number
+        <Form.Label column sm={5}>
+          Phone Number:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="text"
-            placeholder="Phone Number"
+            placeholder="Enter your phone number"
             value={phone_number}
             onChange={(e) => setPhone_number(e.target.value)}
           />
@@ -121,13 +123,13 @@ const signUpForm = ({ onSubmit }) => {
       </Form.Group>
 
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalLocation">
-        <Form.Label column sm={2}>
-          Location
+        <Form.Label column sm={4}>
+          Location:
         </Form.Label>
-        <Col sm={10}>
+        <Col sm={13}>
           <Form.Control
             type="text"
-            placeholder="Location"
+            placeholder="Enter any location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
@@ -143,6 +145,8 @@ const signUpForm = ({ onSubmit }) => {
         </Link>
       </Form.Group>
     </Form>
+    </Card.Body>
+        </Card>
   );
 };
 

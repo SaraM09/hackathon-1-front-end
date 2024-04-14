@@ -54,12 +54,12 @@ const Header = () => {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-primary" className="me-2">
+              <Button variant="outline-success" className="me-2">
                 Search
               </Button>
 
               <Link to= "/signup">
-                <Button variant="outline-success">SignUp</Button>
+                <Button style={{ marginRight: "10px" }} variant="outline-success">SignUp</Button>
               </Link>
               
               <Link to= "/signin">

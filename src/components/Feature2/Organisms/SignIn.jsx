@@ -21,16 +21,17 @@ const loginForm = () => {
     };
 
     return (
-        <Card className="border-5" style={{ borderColor: '#DCE1DE' }}>
-    <Card.Body>
+        <Card className="border-5" style={{ borderColor: '#DCE1DE', background: '#DCE1DE' }}>
+        <Card.Body>
         <Form onSubmit={handleSubmit}>
           <h2>Login</h2>
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-            <Form.Label column sm={2}>
-              Email
+            <Form.Label column sm={3}>
+              Email:
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={12}>
               <Form.Control
+              placeholder="Enter email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -40,11 +41,12 @@ const loginForm = () => {
           </Form.Group>
     
           <Form.Group as={Row} className="mb-1" controlId="formHorizontalPassword">
-            <Form.Label column sm={2}>
-              Password
+            <Form.Label column sm={4}>
+              Password:
             </Form.Label>
-            <Col sm={10}>
+            <Col sm={12}>
               <Form.Control
+                placeholder="Enter password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
